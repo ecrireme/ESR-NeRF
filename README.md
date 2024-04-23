@@ -1,4 +1,4 @@
-# ESR-NeRF
+# ESR-NeRF [CVPR 2024]
 
 Our official implementation of ESR-NeRF is currently in development. 
 
