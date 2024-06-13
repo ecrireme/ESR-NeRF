@@ -1,6 +1,6 @@
 # ESR-NeRF: Emissive Source Reconstruction Using LDR Multi-view Images [CVPR 2024]
 This repository contains the official PyTorch implementation for our CVPR2024 paper.
-- [Jinseo Jeong*](https://jinseo.kr/), [Junseo Koo](https://vision.snu.ac.kr/people/junseokoo.html), [Qimeng Zhang](), [Gunhee Kim](https://vision.snu.ac.kr/gunhee/). ESR-NeRF: Emissive Source Reconstruction Using LDR Multi-view Images. In CVPR, 2024 
+- [Jinseo Jeong](https://jinseo.kr/), [Junseo Koo](https://vision.snu.ac.kr/people/junseokoo.html), [Qimeng Zhang](), [Gunhee Kim](https://vision.snu.ac.kr/gunhee/). ESR-NeRF: Emissive Source Reconstruction Using LDR Multi-view Images. In CVPR, 2024 
 
 [[Paper Link]](https://arxiv.org/abs/2404.15707) [[Dataset]](https://www.dropbox.com/scl/fo/wg3p5bm3186oxpecioqsv/AICtbbYSEpLF9HZOGZ-uiE4?rlkey=7k5zt2fwyddfvadshs5h211k9&st=j284d8qp&dl=0)
 
