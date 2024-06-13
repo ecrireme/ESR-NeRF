@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults: 
+  - __init__
+  - _self_
+
+data:
+  scene: 40

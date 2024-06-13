@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/lts
+  - _self_
+
+app:
+ trainer:
+  normal_eps: 0.001

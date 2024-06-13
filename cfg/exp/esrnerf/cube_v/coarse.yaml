@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/coarse
+  - _self_

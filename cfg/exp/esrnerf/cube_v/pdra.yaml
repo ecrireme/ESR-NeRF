@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/pdra
+  - _self_
+
+app:
+  trainer:
+    prog_slope: 0.00003
+    weight_lts_l: 100.0
+    weight_lts_r: 0.1

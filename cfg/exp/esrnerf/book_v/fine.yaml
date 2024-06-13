@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/fine
+  - _self_
+
+app:
+  trainer:
+   weight_linear: 0.01

@@ -1,0 +1,6 @@
+# @package _global_
+
+data:
+  cls: dtu.DTU
+  root: dataset/dtu
+  scene: ???

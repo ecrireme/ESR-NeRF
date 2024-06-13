@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - /cfg/__init__
+  - /cfg/data/esrnerf/cube_v
+  - _self_

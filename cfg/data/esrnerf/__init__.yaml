@@ -1,0 +1,6 @@
+# @package _global_
+
+data:
+  cls: esrnerf.ESRNeRF
+  root: dataset/esrnerf
+  scene: ???

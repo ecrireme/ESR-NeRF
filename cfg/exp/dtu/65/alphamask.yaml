@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/alphamask
+  - _self_
+
+# app:
+#  trainer:
+#   batch_size: 32768

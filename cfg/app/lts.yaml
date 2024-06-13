@@ -1,0 +1,117 @@
+# @package _global_
+
+defaults:  
+  - __init__
+  - _self_
+
+# app
+app:
+  # common
+  cls: fine.LTS
+
+  # pre-defined model specific
+  model:
+    mask_ks: 3
+    maskcache_thres: 0.001
+    fastcolor_thres: 0.0001
+
+    stepsize: 0.5
+
+    color_dim: 6
+    rgbnet_width: 192
+    rgbnet_depth: 4
+    
+    tonemap_width: 192
+    tonemap_depth: 2
+    
+    brdfnet_width: 128 # 192
+    brdfnet_depth: 4
+
+    env_sg: 48
+    env_activation: softplus
+    
+    posbase_pe: 5
+    viewbase_pe: 1
+    colorbase_pe: 5
+    grad_feat: [0.5, 1.0, 1.5, 2.0]
+
+    neus_alpha: interp
+
+    ray_sampling: random
+    num_2ndrays: 256 
+    num_ltspts: 100 
+    lts_near: 1e-5
+
+  # trainer
+  trainer:
+    # model related
+    ckpt: null
+
+    brdf_color_init: False 
+
+    s_start: 220.0
+    s_inv_ratio: 100.0
+    step_start: 0
+    step_end: 0
+
+    # optimizer params
+    batch_size: 8192
+    n_iters: 40000
+
+    lrs:
+      off_color: 0.1
+      off_rgbnet: 0.003
+      emo_color: 0.1
+      emo_rgbnet: 0.003
+      sdf: 0.0005 #0.005
+      tonemapper: 0.003
+      brdf: 0.1
+      brdfnet: 0.001
+      emitnet: 0.001
+      envmap: 0.001
+
+    decay_steps: {}
+      # 15000:
+        # sdf: 0.1
+
+    warm_up_iters: 0
+    warm_up_min_ratio: 1.0
+    const_warm_up: True
+    cos_min_ratio: 0
+
+    # reg
+    weight_entropy_last: 0.001
+    weight_tv_density: 0.01   
+    weight_linear: 10.0 #0.1
+    weight_lts: 0.01
+    weight_normal_smooth: 0.001
+    normal_eps: 0.01 
+    emit_eps: 0.001
+
+    tvs: 
+      sdf: 0.1
+      smooth_grad: 0.05
+
+    tv_from: 0
+    tv_end: 30000
+    tv_every: 3
+    tv_dense_before: 20000
+
+    # eval
+    vis_every: 10000
+    N_vis: 5
+    save_every: 10000
+    save_all: False
+
+
+  eval:
+    ckpt: null
+
+    batch_size: 8192
+
+    render_pbr: False 
+    chunk_size: 256 
+
+    envmap_height: 128
+    envmap_width: 256
+     

@@ -1,0 +1,95 @@
+# @package _global_
+
+defaults:  
+  - __init__
+  - _self_
+
+# app
+app:
+  # common
+  cls: coarse.Coarse
+
+  # pre-defined model specific
+  model: 
+    mask_ks: 3
+    maskcache_thres: 0.001
+    fastcolor_thres: 0.0001
+
+    stepsize: 0.5
+    
+    num_voxels: 884736
+
+    color_dim: 12
+    rgbnet_width: 128
+    rgbnet_depth: 3
+    posbase_pe: 5
+    viewbase_pe: 1
+
+    smooth_ksize: 5
+    smooth_sigma: 0.8
+
+    neus_alpha: interp
+
+    
+  # trainer
+  trainer:
+    # model related
+    ckpt: null
+
+    world_bound_scale: 1.05
+    bbox_thres: 0.001 
+
+    s_start: 5.0
+    s_inv_ratio: 50.0
+    step_start: 0
+    step_end: -1
+
+    # optimization params
+    batch_size: 8192
+    n_iters: 10000
+
+    lrs:
+      off_color: 0.1
+      off_rgbnet: 0.001
+      emo_color: 0.1
+      emo_rgbnet: 0.001
+      sdf: 0.1
+
+    lr_decay: 20
+
+    decay_steps: 
+      1000:
+        sdf: 0.1
+      5000:
+        sdf: 0.5
+
+    # reg
+    weight_entropy_last: 0.001
+    weight_tv_density: 0.001
+    weight_tv_color: 0.01
+
+    tvs: 
+      sdf: 0.1
+      smooth_grad: 0.05
+
+    tv_updates: 
+      1000:
+        sdf: 0.1
+        smooth_grad: 0.2
+
+    tv_from: 0
+    tv_end: 20000
+    tv_every: 1
+
+    # eval
+    vis_every: 10000
+    N_vis: 5
+    save_every: 10000
+    save_all: False
+
+
+  eval:
+    ckpt: null
+
+    batch_size: 16384
+      

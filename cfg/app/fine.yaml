@@ -1,0 +1,95 @@
+# @package _global_
+
+defaults:  
+  - __init__
+  - _self_
+
+# app
+app:
+  # common
+  cls: fine.Fine
+
+  # pre-defined model specific
+  model:
+    mask_ks: 3
+    maskcache_thres: 0.001
+    fastcolor_thres: 0.0001
+
+    stepsize: 0.5
+
+    color_dim: 6
+    rgbnet_width: 192
+    rgbnet_depth: 4
+    tonemap_width: 192
+    tonemap_depth: 2
+    posbase_pe: 5
+    viewbase_pe: 1
+    colorbase_pe: 5
+    grad_feat: [0.5, 1.0, 1.5, 2.0]
+
+    neus_alpha: interp
+
+  # trainer
+  trainer:
+    # model related
+    ckpt: null
+
+    world_bound_scale: 1.05
+    bbox_thres: 0.001 
+    sdf_reduce: 0.3
+
+    num_voxels: 16777216
+    pg_scale: [15000]
+    scale_ratio: 4.096
+
+    s_start: 20.0
+    s_inv_ratio: 100.0
+    step_start: 0
+    step_end: -1
+
+    # optimizer params
+    batch_size: 8192
+    n_iters: 20000
+
+    lrs:
+      off_color: 0.1
+      off_rgbnet: 0.003
+      emo_color: 0.1
+      emo_rgbnet: 0.003
+      sdf: 0.005
+      tonemapper: 0.003
+
+    decay_steps:
+      15000:
+        sdf: 0.1
+
+    warm_up_iters: 0
+    warm_up_min_ratio: 1.0
+    const_warm_up: True
+    cos_min_ratio: 0
+
+    # reg
+    weight_entropy_last: 0.001
+    weight_tv_density: 0.01   
+    weight_linear: 0.1
+
+    tvs: 
+      sdf: 0.1
+      smooth_grad: 0.05
+
+    tv_from: 0
+    tv_end: 30000
+    tv_every: 3
+    tv_dense_before: 20000
+
+    # eval
+    vis_every: 10000
+    N_vis: 5
+    save_every: 10000
+    save_all: False
+
+
+  eval:
+    ckpt: null
+
+    batch_size: 16384

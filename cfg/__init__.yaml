@@ -1,0 +1,49 @@
+# @package _global_
+
+defaults:  
+  - __hydra__
+  - _self_  
+
+# logging
+log:
+  root: ./logs
+  project: debug 
+  group: ${data.cls}.${data.scene}.${app.cls} 
+  name: ${now:%y-%m-%d_%H-%M-%S_%f} 
+  dir: null # this will be automatically filled by the customize_cfg function.
+  ckpt_dir: null # this will be automatically filled by the customize_cfg function.
+
+  # wandb option
+  offline: false
+  entity: null
+
+# system settings
+system:
+  debug: false
+  seed: 0
+  device: cuda:0
+  data_preload: cuda
+  tqdm_iters: 10
+
+# app
+app:
+  cls: ???
+  phase: ???
+
+  # trainer
+  trainer: ???
+  # eval
+  eval:  ???
+
+# data
+data:
+  cls: ???
+  root: ???
+  scene: ???
+  
+  resize: 1.0
+  white_bg: true
+  batch_type: nerf
+
+# global variable
+global_step: 0

@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - __init__
+  - /cfg/app/lts
+  - _self_
+
+app:
+  trainer:
+    weight_linear: 100.0
+    weight_lts: 50.0

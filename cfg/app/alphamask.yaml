@@ -1,0 +1,51 @@
+# @package _global_
+
+defaults:  
+  - __init__
+  - _self_
+
+# app
+app:
+  # common
+  cls: coarse.AlphaMask
+
+  # pre-defined model specific
+  model: 
+    num_voxels: 1024000
+    stepsize: 0.5
+
+    alpha_init: 0.000001
+
+  # trainer
+  trainer:
+    # model related
+    ckpt: null
+    world_bound_scale: 1.0
+
+    # optimization params
+    batch_size: 8192
+    n_iters: 10000
+
+    lrs:
+      density: 0.1
+      off_color: 0.1
+      emo_color: 0.1
+
+    lr_decay: 20
+
+    # reg
+    weight_entropy_last: 0.01
+    weight_rgbper: 0.1
+
+    # eval
+    vis_every: 10000
+    N_vis: 5
+    save_every: 10000
+    save_all: False
+
+
+  eval:
+    ckpt: null
+
+    batch_size: 16384
+      

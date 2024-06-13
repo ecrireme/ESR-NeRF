@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - /cfg/__init__
+  - /cfg/data/esrnerf/giftbox_w
+  - _self_
